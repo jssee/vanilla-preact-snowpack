@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "@corral/monorepo",
+  "license": "MIT",
+  "author": "Jesse Hoyos",
+  "homepage": "https://corral.link",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "yarn workspace client",
+    "server": "yarn workspace server",
+    "start": "concurrently --kill-others-on-fail \"yarn workspace client run start\" \"yarn workspace server run start\""
+  },
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
